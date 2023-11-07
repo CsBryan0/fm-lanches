@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cardápio Digital F&M Lanches</title>
+    <link rel="stylesheet" href="style.css" />
+    <!-- Adicione o Bootstrap CSS após o seu arquivo CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <script
+      src="https://kit.fontawesome.com/21def78215.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <!-- Container Bootstrap -->
+      <!-- Cabeçalho usando Bootstrap classes -->
+      <header class="bg-light text-center py-4">
+        <h1 class="display-4 text-danger"><i class="fa-solid fa-burger"></i>F&M Lanches</h1>
+      </header>
+
+      <section id="menu">
+        <h2 class="mt-4 text-danger">Lanches</h2>
+        <p class="text-danger">Todos os lanches acompanham Alface, Tomate, Milho e Batata!</p>
+        <ul id="lanches" class="list-group"></ul>
+
+        <h2 class="mt-4 text-danger">Bebidas</h2>
+        <ul id="bebidas" class="list-group"></ul>
+      </section>
+
+      <section id="carrinho" class="mt-4">
+        <h2 class="text-danger">Carrinho</h2>
+
+        <ul id="itens-carrinho" class="list-group"></ul>
+
+        <h4>Total: R$ <span id="total">0.00</span></h4>
+
+        <button id="confirmar-pedido" class="btn btn-danger">
+          Confirmar Pedido
+        </button>
+      </section>
+
+      <section id="entrega" style="display: none">
+        <h2 class="text-danger">Forma de Entrega</h2>
+        <form>
+          <div class="custom-control custom-radio">
+            <input
+              type="radio"
+              class="custom-control-input"
+              name="forma-entrega"
+              id="retirada"
+            />
+            <label class="custom-control-label" for="retirada"
+              >Retirada no Local</label
+            >
+          </div>
+
+          <div class="custom-control custom-radio">
+            <input
+              type="radio"
+              class="custom-control-input"
+              name="forma-entrega"
+              id="entrega-domicilio"
+            />
+            <label class="custom-control-label" for="entrega-domicilio"
+              >Entrega a Domicílio</label
+            >
+          </div>
+          <p class="text-danger  font-weight-bold">
+            Taxa de Entrega: R$ <span id="taxa-entrega">0.00</span>
+          </p>
+
+          <div id="endereco-entrega" style="display: none">
+            <label for="endereco-cliente">Endereço de Entrega:</label>
+            <input
+              type="text"
+              id="endereco-cliente"
+              class="form-control"
+              placeholder="Digite o endereço"
+              required
+            />
+          </div>
+        </form>
+      </section>
+
+      <section id="pagamento" style="display: none">
+        <h2 class="text-danger">Forma de Pagamento</h2>
+        <form>
+          <label class="text-danger">Selecione a forma de pagamento:</label>
+          <select id="forma-pagamento" class="form-control" required>
+            <option value="">---Escolha a forma de Pagamento---</option>
+            <option value="dinheiro">Dinheiro</option>
+            <option value="cartao">Cartão de Crédito/Débito</option>
+            <option value="pix">PIX</option>
+          </select>
+
+          <div id="troco" style="display: none">
+            <label for="valor-pago" class="text-danger">Valor Pago:</label>
+            <input
+              type="number"
+              id="valor-pago"
+              class="form-control"
+              required
+            />
+            <p class="text-danger">Troco: <span id="valor-troco">0.00</span></p>
+          </div>
+
+          <label for="observacoes" class="text-danger font-weight-bold">Observações:
+            <textarea id="observacoes" rows="1"></textarea>
+          </label>
+          
+          <button id="finalizar-pedido" class="btn btn-danger mb-4">
+            Finalizar Pedido
+          </button>
+        </form>
+      </section>
+
+
+      
+    </div>
+
+    <!-- Seu JavaScript -->
+    <script src="index.js"></script>
+
+    <!-- Adicione os scripts do Bootstrap após o seu JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </body>
+</html>
