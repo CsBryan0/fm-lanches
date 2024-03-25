@@ -237,7 +237,7 @@ function gerarMensagemPedido() {
       valorPago
     )})\n`;
   } else if (formaPagamentoSelecionada === "pix") {
-    const chavePix = "(27)995235861";
+    const chavePix = "";
     mensagem += `Forma de pagamento: PIX (Chave PIX: ${chavePix})\n`;
   } else {
     mensagem += `Forma de pagamento: Cartão de Crédito/Débito\n`;
@@ -253,7 +253,7 @@ function gerarMensagemPedido() {
 
 function finalizarPedido() {
   const mensagemPedido = gerarMensagemPedido();
-  const numeroWhatsApp = "5527999742113";
+  const numeroWhatsApp = "";
   const urlWhatsApp = `https://api.whatsapp.com/send?phone=${numeroWhatsApp}&text=${mensagemPedido}`;
   window.open(urlWhatsApp);
 }
